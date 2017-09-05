@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Principal</title>
+        <h:outputStylesheet library="css" name="style.css"  />
+        <h:outputStylesheet library="css" name="icons.css"  />
+        <link href="https://fonts.googleapis.com/css?family=Courgette|Hammersmith+One" rel="stylesheet"></link>
+
+    </h:head>
+    <h:body>
+        <h:form> 
+            <p:stack icon="resources/img/folder.png" expanded="true">
+                <p:menuitem value="Cerrar Sesion" icon="resources/img/logout.png" url="index.xhtml"/>
+                <p:menuitem value="Consultas" icon="resources/img/consultas.png" url="#"/>
+                <p:menuitem value="Tablas" icon="resources/img/tablas.png" url="tablas.xhtml"/>
+            </p:stack>
+
+            <div class="banner">
+                <div class="slider">
+                    <ul>
+                        <li>
+                            <img src="https://4.bp.blogspot.com/-mtKdhRTZbsc/UzBEkgmM8eI/AAAAAAAAtYg/FhEe6xLt71E/s0/Casa+Kimball+villa_Ultra+HD.jpg" alt=""/>
+                        </li>
+                        <li>
+                            <img src="https://ugc.kn3.net/i/origin/http://www.fondox.net/wallpapers/fechada-de-una-casa-americana-68.jpg" alt=""/>
+                        </li>
+                        <li>
+                            <img src="http://www.fondox.net/wallpapers/diseno-interior-de-una-casa-de-campo-656.jpg" alt=""/>
+                        </li>
+                        <li>
+                            <img src="http://4.bp.blogspot.com/-WisVQ7-0Bb0/UkTwipIEv_I/AAAAAAAB55k/9lf2x4acQyU/s1600/casa-con-piscina-wonderful-house-1920x1200-wallpaper-fondo.jpg" alt=""/>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contenedor">
+
+                    <h2 class="banner__titulo">Lux Homes </h2>
+                    <p class="banner__txt">Tu estilo, tu hogar</p>
+                </div>
+            </div>
+            <main class="main">
+                <div class="contenedor">
+                    <section class="info">
+                        <article class="info__columna">
+                            <img src="https://i.pinimg.com/originals/3d/d0/d0/3dd0d0c3396f9ce492938c0b3158ea52.jpg" alt="" class="info__img"/>
+                            <h2 class="info__titulo">Mediterraneo</h2>
+                            <p class="info__txt">El estilo mediterráneo se basa en la cultura mediterranea, que abarca paises como Grecia, Italia y el sur de España, el cual tiene por objetivo principal  permitir que el sol inunde toda los espacios de la vivienda.</p>
+                        </article>
+                        <article class="info__columna">
+                            <img src="http://construyehogar.com/wp-content/uploads/2014/05/Fachada-de-casa-r%C3%BAstica-2.jpg" alt="" class="info__img"/>
+                            <h2 class="info__titulo">Rustico</h2>
+                            <p class="info__txt">La primera es la conservación de los elementos tradicionales cuando son prácticos y hermosos: es el caso de la reconstrucción de los techos de madera y vigas, todos de castaño gallego macizo, una solución de toda la vida que garantiza el aislamiento y la calidez. </p>
+                        </article>
+                        <article class="info__columna">
+                            <img src="http://www.arquitexs.com/wp-content/uploads/2016/06/casa-moderna-hollywood-800x445.jpg" class="info__img"/>
+                            <h2 class="info__titulo">Moderna</h2>
+                            <p class="info__txt">Una casa de estilo moderno es aquella que refleja las últimas tendencias de diseño. No se basa en diseños, materiales o colores tradicionales; en lugar de ello, los hogares modernos tienden a ser simples, actuando como un lienzo blanco para que sus inquilinos los llenen de decoración y muebles que reflejan la moda del momento. </p>
+                        </article>
+                    </section>
+
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="contenedor">
+                    <div class="social">
+                        <a href="https://www.facebook.com/UniversidadCostaRica/?fref=ts"  class="icon-facebook"></a>
+                        <a href="https://twitter.com/universidaducr?lang=es" class="icon-twitter"></a>
+                        <a href="https://www.ucr.ac.cr/" class="icon-gplus"></a>
+                    </div>
+
+                    <p class="copy">&copy; Lux Homes - Todos los derechos </p>
+                </div>
+            </footer>
+        </h:form>
+        <script type="text/javascript">
+            function handleLoginRequest(xhr, status, args) {
+                if (args.validationFailed || !args.loggedIn) {
+                    PF('dlg').jq.effect("shake", {times: 5}, 100);
+                } else {
+                    PF('dlg').hide();
+                    $('#loginLink').fadeOut();
+                }
+            }
+        </script>
+    </h:body>
+</html>

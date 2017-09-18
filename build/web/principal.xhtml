@@ -12,53 +12,61 @@
 
     </h:head>
     <h:body>
-        <h:form> 
+        <h:form enctype="multipart/form-data"> 
             <p:stack icon="resources/img/folder.png" expanded="true">
                 <p:menuitem value="Cerrar Sesion" icon="resources/img/logout.png" url="index.xhtml"/>
-                <p:menuitem value="Consultas" icon="resources/img/consultas.png" url="#"/>
-                <p:menuitem value="Tablas" icon="resources/img/tablas.png" url="tablas.xhtml"/>
+                <p:menuitem value="Consultas" icon="resources/img/consultas.png" url="consultas.xhtml"/>
+                <p:menuitem value="Tablas" icon="resources/img/tablas.png" url="menu_tabla.xhtml"/>
             </p:stack>
 
             <div class="banner">
                 <div class="slider">
                     <ul>
                         <li>
-                            <img src="https://4.bp.blogspot.com/-mtKdhRTZbsc/UzBEkgmM8eI/AAAAAAAAtYg/FhEe6xLt71E/s0/Casa+Kimball+villa_Ultra+HD.jpg" alt=""/>
+                            <img src="http://www.ie-wallpapers.com/data/out/2/36776469-abstract.jpg" alt=""/>
                         </li>
                         <li>
-                            <img src="https://ugc.kn3.net/i/origin/http://www.fondox.net/wallpapers/fechada-de-una-casa-americana-68.jpg" alt=""/>
+                            <img src="http://www.androidguys.com/wp-content/uploads/2016/05/geometric-shapes-design-wallpaper-3.jpg" alt=""/>
                         </li>
                         <li>
-                            <img src="http://www.fondox.net/wallpapers/diseno-interior-de-una-casa-de-campo-656.jpg" alt=""/>
+                            <img src="http://www.fondos7.net/wallpaper-original/wallpapers/formas-geometricas-abstractas-10272.jpg" alt=""/>
                         </li>
                         <li>
-                            <img src="http://4.bp.blogspot.com/-WisVQ7-0Bb0/UkTwipIEv_I/AAAAAAAB55k/9lf2x4acQyU/s1600/casa-con-piscina-wonderful-house-1920x1200-wallpaper-fondo.jpg" alt=""/>
+                            <img src="http://cdn.wallpapersafari.com/46/25/3lVG4q.jpg" alt=""/>
                         </li>
                     </ul>
                 </div>
                 <div class="contenedor">
 
-                    <h2 class="banner__titulo">Lux Homes </h2>
-                    <p class="banner__txt">Tu estilo, tu hogar</p>
+                    <h2 class="banner__titulo">CMJ Application</h2>
+                    <p class="banner__txt">Tu motor de base de datos CSV</p>
+
+
+                    <p:growl id="messages" showDetail="true" />
+
+                    <p:fileUpload value="#{fileUploadView.file}" mode="simple" />
+
+                    <p:commandButton value="Submit" ajax="false" actionListener="#{fileUploadView.upload}" />
+
                 </div>
             </div>
             <main class="main">
                 <div class="contenedor">
                     <section class="info">
                         <article class="info__columna">
-                            <img src="https://i.pinimg.com/originals/3d/d0/d0/3dd0d0c3396f9ce492938c0b3158ea52.jpg" alt="" class="info__img"/>
-                            <h2 class="info__titulo">Mediterraneo</h2>
-                            <p class="info__txt">El estilo mediterráneo se basa en la cultura mediterranea, que abarca paises como Grecia, Italia y el sur de España, el cual tiene por objetivo principal  permitir que el sol inunde toda los espacios de la vivienda.</p>
+                            <img src="http://cdn3.computerhoy.com/sites/computerhoy.com/files/styles/fullcontent/public/practicos/tabla_datos.png?itok=5pG6X61I" alt="" class="info__img"/>
+                            <h2 class="info__titulo">Tablas</h2>
+                            <p class="info__txt">Tabla en las bases de datos, se refiere al tipo de modelado de datos, donde se guardan los datos recogidos por un programa. Su estructura general se asemeja a la vista general de un programa de hoja de cálculo.</p>
                         </article>
                         <article class="info__columna">
-                            <img src="http://construyehogar.com/wp-content/uploads/2014/05/Fachada-de-casa-r%C3%BAstica-2.jpg" alt="" class="info__img"/>
-                            <h2 class="info__titulo">Rustico</h2>
-                            <p class="info__txt">La primera es la conservación de los elementos tradicionales cuando son prácticos y hermosos: es el caso de la reconstrucción de los techos de madera y vigas, todos de castaño gallego macizo, una solución de toda la vida que garantiza el aislamiento y la calidez. </p>
+                            <img src="http://cdn2.hubspot.net/hub/239039/file-3396076026-jpg/images/datos_secundarios_definicion_y_tipos.jpg" alt="" class="info__img"/>
+                            <h2 class="info__titulo">Datos</h2>
+                            <p class="info__txt">Una base de datos o banco de datos es un conjunto de datos pertenecientes a un mismo contexto y almacenados sistemáticamente para su posterior uso. En este sentido; una biblioteca puede considerarse una base de datos compuesta en su mayoría por documentos y textos impresos en papel e indexados para su consulta. </p>
                         </article>
                         <article class="info__columna">
-                            <img src="http://www.arquitexs.com/wp-content/uploads/2016/06/casa-moderna-hollywood-800x445.jpg" class="info__img"/>
-                            <h2 class="info__titulo">Moderna</h2>
-                            <p class="info__txt">Una casa de estilo moderno es aquella que refleja las últimas tendencias de diseño. No se basa en diseños, materiales o colores tradicionales; en lugar de ello, los hogares modernos tienden a ser simples, actuando como un lienzo blanco para que sus inquilinos los llenen de decoración y muebles que reflejan la moda del momento. </p>
+                            <img src="http://www.entrenadorpersonalpro.com/wp-content/uploads/2013/01/ENTRENADOR-PERSONAL-PRO-ENTRENAMIENTO-PERSONAL-ENTRENADORES-PERSONALES-CONSULTA-ONLINE-1024x693.jpg" class="info__img"/>
+                            <h2 class="info__titulo">Consultas</h2>
+                            <p class="info__txt">En bases de datos, una consulta es el método para acceder a los datos en las bases de datos. Con las consultas se puede modificar, borrar, mostrar y agregar datos en una base de datos. Para esto se utiliza un lenguaje de consultas.</p>
                         </article>
                     </section>
 

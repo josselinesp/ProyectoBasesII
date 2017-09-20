@@ -46,12 +46,18 @@
 
                         <p:panel header="Seleccione la tabla" style="margin-bottom:10px;">
                             <h:panelGrid columns="2" cellpadding="5">
-                                <p:outputLabel for="item" value="Tabla: " />
-                                <p:selectOneMenu id="item" value="#{dropdownView.item}" style="width:150px">
-                                    <p:ajax update="item" />
-                                    <f:selectItem itemLabel="Selecione tabla" itemValue="" noSelectionOption="true" />
-                                    <f:selectItems value="#{dropdownView.items}" />
+                                <p:outputLabel for="country" value="Tabla: " />
+                                <p:selectOneMenu id="country" value="#{dropdownView.country}" style="width:150px">
+                                    <p:ajax listener="#{dropdownView.onCountryChange}" update="city" />
+                                    <f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
+                                    <f:selectItems value="#{dropdownView.countries}" />
                                 </p:selectOneMenu>
+                                <p:outputLabel for="city" value="City: " />
+                                <p:selectOneMenu id="city" value="#{dropdownView.city}" style="width:150px">
+                                    <f:selectItem itemLabel="Select City" itemValue="" noSelectionOption="true" />
+                                    <f:selectItems value="#{dropdownView.cities}" />
+                                </p:selectOneMenu>
+
                             </h:panelGrid>
 
                             <p:separator />
@@ -61,18 +67,6 @@
 
                     </div>
 
-                    <div class="tabla">
-                        <p:dataTable var="car" value="#{dtBasicView.cars}">
-                            <c:forEach items="#{dtBasicView.items}" var="item">
-
-                                <p:column headerText="#{item}">
-                                    <h:outputText value="#{car.id}" />
-                                </p:column>
-
-                            </c:forEach>
-
-                        </p:dataTable>
-                    </div>
                 </div>
             </div>
             <main class="main">

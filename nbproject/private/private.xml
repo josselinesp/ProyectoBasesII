@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Josseline/Documents/UCR/Bases%20II/ProyectoBasesII/src/java/cr/ac/ucr/beans/NewClass.java</file>
-            <file>file:/C:/Users/Josseline/Documents/UCR/Bases%20II/ProyectoBasesII/web/principal.xhtml</file>
-            <file>file:/C:/Users/Josseline/Documents/UCR/Bases%20II/ProyectoBasesII/src/java/cr/ac/ucr/beans/prueba.java</file>
-            <file>file:/C:/Users/Josseline/Documents/UCR/Bases%20II/ProyectoBasesII/src/java/cr/ac/ucr/beans/FileUploadView.java</file>
+            <file>file:/C:/Users/Josseline/Documents/UCR/Bases%20II/ProyectoBasesII/src/java/cr/ac/ucr/beans/BasicView.java</file>
+            <file>file:/C:/Users/Josseline/Documents/UCR/Bases%20II/ProyectoBasesII/web/tabla.xhtml</file>
+            <file>file:/C:/Users/Josseline/Documents/UCR/Bases%20II/ProyectoBasesII/src/java/cr/ac/ucr/beans/Table.java</file>
+            <file>file:/C:/Users/Josseline/Documents/UCR/Bases%20II/ProyectoBasesII/src/java/cr/ac/ucr/beans/TableService.java</file>
         </group>
     </open-files>
 </project-private>

@@ -22,24 +22,65 @@ import javax.faces.bean.ViewScoped;
 public class BasicView implements Serializable {
 
     private List<Car> cars;
-    private String name_table;
-    private List<String> items;
+    private List<String> keyList;
+    private List<Table> tables;
+    private String key;
 
-    public List<String> getItems() {
-        return items;
-    }
     @ManagedProperty("#{carService}")
     private CarService service;
 
     @PostConstruct
     public void init() {
+        tables = new ArrayList<Table>();
+        tables.add(new Table("Id", "d5f4sd54f"));
+        tables.add(new Table("Id", "d4fsdf444"));
+        tables.add(new Table("Year", "2015"));
+        tables.add(new Table("Year", "2017"));
+        tables.add(new Table("Brand", "Toyota"));
+        tables.add(new Table("Brand", "Susuki"));
 
-        cars = service.createCars(2);
-        items = new ArrayList<>();
-        
-        items.add("Id");
-        items.add("Year");
-        items.add("Brand");
+        keyList = new ArrayList<>();
+
+        keyList.add("Id");
+        keyList.add("Year");
+        keyList.add("Brand");
+
+    }
+
+    public void compararTabla(String tabla) {
+//        for (int i = 0; i < tables.size(); i++) {
+//            Table table = tables.get(i);
+//            if (table.getNombre_columna().equalsIgnoreCase(tabla)) {
+//                tables = new 
+//             
+//            }
+//
+//        }
+
+    }
+
+    public List<String> getKeyList() {
+        return keyList;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public void setKeyList(List<String> keyList) {
+        this.keyList = keyList;
+    }
+
+    public List<Table> getTables() {
+        return tables;
+    }
+
+    public void setTables(List<Table> tables) {
+        this.tables = tables;
     }
 
     public List<Car> getCars() {
@@ -49,13 +90,4 @@ public class BasicView implements Serializable {
     public void setService(CarService service) {
         this.service = service;
     }
-
-    public String getName_table() {
-        return name_table;
-    }
-
-    public void setName_table(String name_table) {
-        this.name_table = name_table;
-    }
-
 }

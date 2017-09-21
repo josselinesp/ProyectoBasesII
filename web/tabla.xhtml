@@ -62,17 +62,21 @@
                     </div>
 
                     <div class="tabla">
-                        <p:dataTable var="car" value="#{dtBasicView.cars}">
-                            <c:forEach items="#{dtBasicView.items}" var="item">
 
-                                <p:column headerText="#{item}">
-                                    <h:outputText value="#{car.id}" />
+                        <p:dataTable var="table" value="#{dtBasicView.tables}">
+                            <c:forEach items="#{dtBasicView.keyList}" var="key">
+
+                                <p:column headerText="#{key}">
+                                    <h:outputText value="#{table.dato}" />
                                 </p:column>
-
                             </c:forEach>
 
+
+
                         </p:dataTable>
+
                     </div>
+
                 </div>
             </div>
             <main class="main">

@@ -24,7 +24,7 @@ public class Car {
         this.brand = randomBrand;
         this.price = randomPrice;
         this.soldState = randomSoldState;
-        this.color=randomColor;
+        this.color = randomColor;
 
     }
 

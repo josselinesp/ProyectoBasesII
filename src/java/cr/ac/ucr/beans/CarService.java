@@ -91,5 +91,4 @@ public class CarService {
         return Arrays.asList(brands);
     }
 
-  
 }

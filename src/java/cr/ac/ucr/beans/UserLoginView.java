@@ -9,7 +9,6 @@ package cr.ac.ucr.beans;
  *
  * @author Josseline
  */
-
 import java.io.IOException;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;

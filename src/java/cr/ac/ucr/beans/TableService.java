@@ -53,7 +53,7 @@ public class TableService {
     public List<Table> createTable(int size) {
         List<Table> list = new ArrayList<Table>();
         for (int i = 0; i < size; i++) {
-            list.add(new Table(getRandomId()));
+          //  list.add(new Table(getRandomId()));
         }
 
         return list;

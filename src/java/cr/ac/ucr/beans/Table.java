@@ -14,8 +14,9 @@ public class Table {
     private String nombre_columna;
     private String dato;
 
-    public Table(String nombre_columna) {
+    public Table(String nombre_columna, String dato) {
         this.nombre_columna = nombre_columna;
+        this.dato = dato;
 
     }
 

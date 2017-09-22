@@ -9,6 +9,7 @@ package cr.ac.ucr.beans;
  *
  * @author Josseline
  */
+import cr.ac.ucr.datos.Table;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

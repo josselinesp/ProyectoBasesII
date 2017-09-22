@@ -185,9 +185,9 @@ public class DropdownView implements Serializable {
         context.addCallbackParam("valor", valor);
 
         if (valor) {
-            //cargartabla(item);
-            ExternalContext eContext = FacesContext.getCurrentInstance().getExternalContext();
-            eContext.redirect("faces/tabla.xhtml");
+            BasicView bv = new BasicView();
+            bv.callTable(item);
+
         }
     }
 }

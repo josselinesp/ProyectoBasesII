@@ -9,6 +9,7 @@ package cr.ac.ucr.beans;
  *
  * @author Josseline
  */
+import cr.ac.ucr.datos.Table;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,9 +17,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import org.primefaces.context.RequestContext;
 
 @ManagedBean(name = "dtBasicView")
 @ViewScoped
@@ -62,6 +67,12 @@ public class BasicView implements Serializable {
 
     }
 
+    public void callTable(String table) {
+    
+            System.out.println("----------------------------" + table + "-------------------------------------");
+       
+    }
+
     public Set<String> getColumnNames() {
         /*Las columnas se interpretan por medio de un hashSet de string, 
         acá lo que se hace es devolver la lista de nombres de columnas(como el keyList que esta comentado en el init
@@ -75,18 +86,6 @@ public class BasicView implements Serializable {
 
     public void setDataFile(List<HashMap<String, String>> dataFile) {
         this.dataFile = dataFile;
-    }
-
-    public void compararTabla(String tabla) {
-//        for (int i = 0; i < tables.size(); i++) {
-//            Table table = tables.get(i);
-//            if (table.getNombre_columna().equalsIgnoreCase(tabla)) {
-//                tables = new 
-//             
-//            }
-//
-//        }
-
     }
 
     public List<String> getKeyList() {

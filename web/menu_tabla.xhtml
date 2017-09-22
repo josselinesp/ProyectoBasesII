@@ -10,7 +10,12 @@
         <h:outputStylesheet library="css" name="style.css"  />
         <h:outputStylesheet library="css" name="icons.css"  />
         <link href="https://fonts.googleapis.com/css?family=Courgette|Hammersmith+One" rel="stylesheet"></link>
+        <script type="text/javascript" >
+            function functionTable() {
+                window.location = "tabla.xhtml";
+            }
 
+        </script>
     </h:head>
     <h:body>
         <h:form enctype="multipart/form-data"> 
@@ -56,7 +61,7 @@
 
                             <p:separator />
 
-                            <p:commandButton value="Cargar" update="msgs" actionListener="#{dropdownView.displayLocation}" icon="ui-icon-check" />
+                            <p:commandButton value="Cargar" update="msgs" actionListener="#{dropdownView.displayLocation}" onclick="functionTable()" icon="ui-icon-check" />
                         </p:panel>
 
                     </div>

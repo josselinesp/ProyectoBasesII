@@ -1,0 +1,6 @@
+Modelo
+id,num_plantas,area_contruccion,precio,estilo_construccion
+12,1,100.0,100000.0,Contemporaneo
+23,1,100.0,100000.0,Clasico
+55,1,100.0,100000.0,Moderno
+44,8,499.0,49.0,mdo

@@ -1,12 +1,122 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Principal</title>
+        <h:outputStylesheet library="css" name="style.css"  />
+        <h:outputStylesheet library="css" name="icons.css"  />
+        <link href="https://fonts.googleapis.com/css?family=Courgette|Hammersmith+One" rel="stylesheet"></link>
+
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h:form enctype="multipart/form-data"> 
+            <p:stack icon="resources/img/folder.png" expanded="true">
+                <p:menuitem value="Cerrar Sesion" icon="resources/img/logout.png" url="index.xhtml"/>
+                <p:menuitem value="Consultas" icon="resources/img/consultas.png" url="#"/>
+                <p:menuitem value="Tablas" icon="resources/img/tablas.png" url="menu_tabla.xhtml"/>
+            </p:stack>
+
+            <div class="banner">
+                <div class="slider">
+                    <ul>
+                        <li>
+                            <img src="http://www.ie-wallpapers.com/data/out/2/36776469-abstract.jpg" alt=""/>
+                        </li>
+                        <li>
+                            <img src="http://www.androidguys.com/wp-content/uploads/2016/05/geometric-shapes-design-wallpaper-3.jpg" alt=""/>
+                        </li>
+                        <li>
+                            <img src="http://www.fondos7.net/wallpaper-original/wallpapers/formas-geometricas-abstractas-10272.jpg" alt=""/>
+                        </li>
+                        <li>
+                            <img src="http://cdn.wallpapersafari.com/46/25/3lVG4q.jpg" alt=""/>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contenedor">
+
+                    <div class="contenedor-dropdown">
+
+                        <p:growl id="msgs" showDetail="true" />
+
+                        <p:panel header="Seleccione la tabla" style="margin-bottom:10px;">
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <p:outputLabel for="item" value="Tabla: " />
+                                <p:selectOneMenu id="item" value="#{dropdownView.item}" style="width:150px">
+                                    <p:ajax update="item" />
+                                    <f:selectItem itemLabel="Selecione tabla" itemValue="" noSelectionOption="true" />
+                                    <f:selectItems value="#{dropdownView.items}" />
+                                </p:selectOneMenu>
+                            </h:panelGrid>
+
+                            <p:separator />
+
+                            <p:commandButton value="Cargar" update="msgs" actionListener="#{dropdownView.displayLocation}" icon="ui-icon-check" />
+                        </p:panel>
+
+                    </div>
+
+                    <div class="tabla">
+                        <p:dataTable var="row" value="#{dtBasicView.dataFile}">
+                            <c:forEach items="#{dtBasicView.columnNames}" var="columnName">
+                                <p:column headerText="#{columnName}">
+                                <h:outputText value="#{row[columnName]}"/>
+                                </p:column>
+                            </c:forEach>
+                        </p:dataTable>
+
+                    </div>
+
+                </div>
+            </div>
+            <main class="main">
+                <div class="contenedor">
+                    <section class="info">
+                        <article class="info__columna">
+                            <img src="http://cdn3.computerhoy.com/sites/computerhoy.com/files/styles/fullcontent/public/practicos/tabla_datos.png?itok=5pG6X61I" alt="" class="info__img"/>
+                            <h2 class="info__titulo">Tablas</h2>
+                            <p class="info__txt">Tabla en las bases de datos, se refiere al tipo de modelado de datos, donde se guardan los datos recogidos por un programa. Su estructura general se asemeja a la vista general de un programa de hoja de cálculo.</p>
+                        </article>
+                        <article class="info__columna">
+                            <img src="http://cdn2.hubspot.net/hub/239039/file-3396076026-jpg/images/datos_secundarios_definicion_y_tipos.jpg" alt="" class="info__img"/>
+                            <h2 class="info__titulo">Datos</h2>
+                            <p class="info__txt">Una base de datos o banco de datos es un conjunto de datos pertenecientes a un mismo contexto y almacenados sistemáticamente para su posterior uso. En este sentido; una biblioteca puede considerarse una base de datos compuesta en su mayoría por documentos y textos impresos en papel e indexados para su consulta. </p>
+                        </article>
+                        <article class="info__columna">
+                            <img src="http://www.entrenadorpersonalpro.com/wp-content/uploads/2013/01/ENTRENADOR-PERSONAL-PRO-ENTRENAMIENTO-PERSONAL-ENTRENADORES-PERSONALES-CONSULTA-ONLINE-1024x693.jpg" class="info__img"/>
+                            <h2 class="info__titulo">Consultas</h2>
+                            <p class="info__txt">En bases de datos, una consulta es el método para acceder a los datos en las bases de datos. Con las consultas se puede modificar, borrar, mostrar y agregar datos en una base de datos. Para esto se utiliza un lenguaje de consultas.</p>
+                        </article>
+                    </section>
+
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="contenedor">
+                    <div class="social">
+                        <a href="https://www.facebook.com/UniversidadCostaRica/?fref=ts"  class="icon-facebook"></a>
+                        <a href="https://twitter.com/universidaducr?lang=es" class="icon-twitter"></a>
+                        <a href="https://www.ucr.ac.cr/" class="icon-gplus"></a>
+                    </div>
+
+                    <p class="copy">&copy; Lux Homes - Todos los derechos </p>
+                </div>
+            </footer>
+        </h:form>
+        <script type="text/javascript">
+            function handleLoginRequest(xhr, status, args) {
+                if (args.validationFailed || !args.loggedIn) {
+                    PF('dlg').jq.effect("shake", {times: 5}, 100);
+                } else {
+                    PF('dlg').hide();
+                    $('#loginLink').fadeOut();
+                }
+            }
+        </script>
     </h:body>
 </html>
-

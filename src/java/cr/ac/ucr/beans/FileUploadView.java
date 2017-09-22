@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.file.CopyOption;
@@ -43,57 +44,26 @@ public class FileUploadView {
 
     public void upload() throws IOException {
         if (file != null) {
-            
-           
+
             FacesMessage message = new FacesMessage("Succesful", file.getFileName() + " is uploaded.");
             FacesContext.getCurrentInstance().addMessage(null, message);
 
             OutputStream outputStream = null;
             String path = "C:\\Users\\Josseline\\Documents\\UCR\\Bases II\\ProyectoBasesII\\" + file.getFileName();
 
-            try {
+            InputStream in = file.getInputstream();
+            OutputStream out = new FileOutputStream(new File(path));
 
-                outputStream = new FileOutputStream(new File(path));
+            int read = 0;
+            byte[] bytes = new byte[1024];
 
-                int read = 0;
-                byte[] bytes = new byte[524];
-                bucle1:
-                while ((read = file.getInputstream().read(bytes)) != -1 ) {
- 
-                    outputStream.write(bytes, 0, read);
-                    System.out.println(bytes.length+"Cinthya");
-                    if(bytes.length<524){
-  
-  break bucle1;
-  }
-                    
-
-                }
-
-                System.out.println("Done!");
-
-            } catch (IOException e) {
-
-            } finally {
-                if (file.getInputstream() != null) {
-                    try {
-                        file.getInputstream().close();
-                        System.out.println("222222222222222222222222222222222222222222222");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                if (outputStream != null) {
-                    try {
-                        // outputStream.flush();
-                        outputStream.close();
-                        System.out.println("3333333333333333333333");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                }
+            while ((read = in.read(bytes)) != -1) {
+                out.write(bytes, 0, read);
             }
+
+            in.close();
+            out.flush();
+            out.close();
 
 //            Path from = Paths.get("C:\\Users\\Josseline\\Documents\\UCR\\Bases II\\logica\\modelo.csv");
 //            Path to = Paths.get("C:\\Users\\Josseline\\Documents\\UCR\\Bases II\\ProyectoBasesII\\" + file.getFileName());

@@ -63,11 +63,11 @@
 
                     <div class="tabla">
 
-                        <p:dataTable var="table" value="#{dtBasicView.tables}">
-                            <c:forEach items="#{dtBasicView.keyList}" var="key">
+                        <p:dataTable var="row" value="#{dtBasicView.dataFile}">
+                            <c:forEach items="#{dtBasicView.columnNames}" var="columnName">
 
-                                <p:column headerText="#{key}">
-                                    <h:outputText value="#{table.dato}" />
+                                <p:column headerText="#{columnName}">
+                                    <h:outputText value="#{row[columnName]}" />
                                 </p:column>
                             </c:forEach>
 
